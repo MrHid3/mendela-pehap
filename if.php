@@ -1,7 +1,7 @@
 <body>
     <h1>Pobieranie wartości z formularzy, instrukcja warunkowa</h1>
     <h2>1</h2>
-    <form action="index.php" method="POST">
+    <form action="if.php" method="POST">
         <input type="text" name="name">
         <input type="submit">
     </form>
@@ -17,7 +17,7 @@
     </form>
 
     <h3>Czy lubisz zimę?</h3>
-    <form action="index.php" method="POST">
+    <form action="if.php" method="POST">
         <select name="zima">
             <option value="t">TAK</option>
             <option value="n">NIE</option>
@@ -35,7 +35,7 @@
     ?>
 
     <h3>4a</h3>
-    <form action="index.php" method="POST">
+    <form action="if.php" method="POST">
         <input type="number" name="first">
         <select name="hl">
             <option value="<"><</option>
@@ -72,7 +72,7 @@
     ?>
 
     <h3>4b</h3>
-    <form action="index.php" method="POST">
+    <form action="if.php" method="POST">
         <input type="number" name="firsta">
         <select name="hla">
             <option value="<" <?php if(isset($_POST["hla"]) && $_POST["hla"] == "<"){echo "selected";}?>><</option>
