@@ -16,6 +16,7 @@
         <input type="submit">
     </form>
 
+    <h2>3</h2>
     <h3>Czy lubisz zimę?</h3>
     <form action="if.php" method="POST">
         <select name="zima">
@@ -107,4 +108,48 @@
         }
     }
     ?>
+
+    <h3>5a</h3>
+    <form action="if.php" method="post">
+        <input name="aaa" size="1">x<sup>2</sup>+<input name="bbb" size="1">x+<input name="ccc" size="1">=0&nbsp&nbsp&nbsp
+        <input type="submit" value="oblicz pierwiastki">
+    </form>
+    <?php
+        if(isset($_POST["aaa"]) && isset($_POST["bbb"]) && isset($_POST["ccc"])) {
+            $delta = $_POST["bbb"] * $_POST["bbb"] - (4 * $_POST["ccc"] * $_POST["ccc"]);
+            $a = $_POST["aaa"];
+            $b = $_POST["bbb"];
+            $c = $_POST["ccc"];
+            echo "detla=" . $delta . "<br>";
+            if ($delta == 0) {
+                echo "x<sub>1</sub>=x<sub>x</sub>=" . (-$b/(2*$a)) . "<br>";
+                return;
+            }
+            echo "x<sub>1</sub>=" . ((-$b-sqrt($delta)) / (2 * $a)) . "<br>";
+            echo "x<sub>2</sub>=" . ((-$b+sqrt($delta)) / (2 * $a)) . "<br>";
+        }
+    ?>
+
+    <h3>5b</h3>
+    <form action="if.php" method="post">
+        <input name="aa" size="1">x<sup>2</sup>+<input name="bb" size="1">x+<input name="cc" size="1">=0&nbsp&nbsp&nbsp
+        <input type="submit" value="oblicz pierwiastki">
+    </form>
+
+    <?php
+        if(isset($_POST["aa"]) && isset($_POST["bb"]) && isset($_POST["cc"])) {
+            $delta = $_POST["bb"] * $_POST["bb"] - (4 * $_POST["cc"] * $_POST["cc"]);
+            $a = $_POST["aa"];
+            $b = $_POST["bb"];
+            $c = $_POST["cc"];
+            echo "Δ=" . "<input style='color: red' disabled size='1' value='" . $delta . "'>&nbsp;&nbsp;";
+            if ($delta == 0) {
+                echo "x<sub>1</sub>=x<sub>x</sub>=<input style='color: green' disabled size='5' value='" . (-$b/(2*$a)) . "'>";
+                return;
+            }
+            echo "x<sub>1</sub>=<input style='color: green' disabled value='" . ((-$b-sqrt($delta)) / (2 * $a)) . "'>&nbsp;&nbsp;";
+            echo "x<sub>2</sub>=<input style='color: green' disabled value='" . ((-$b+sqrt($delta)) / (2 * $a)) . "'>&nbsp;&nbsp;";
+        }
+    ?>
+
 </body>
