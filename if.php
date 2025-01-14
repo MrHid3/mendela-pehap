@@ -111,7 +111,7 @@
 
     <h3>5a</h3>
     <form action="if.php" method="post">
-        <input name="aaa" size="1">x<sup>2</sup>+<input name="bbb" size="1">x+<input name="ccc" size="1">=0&nbsp&nbsp&nbsp
+        <input name="aaa" size="1" type="number">x<sup>2</sup>+<input name="bbb" size="1" type="number">x+<input name="ccc" size="1" type="number">=0&nbsp&nbsp&nbsp
         <input type="submit" value="oblicz pierwiastki">
     </form>
     <?php
@@ -132,7 +132,7 @@
 
     <h3>5b</h3>
     <form action="if.php" method="post">
-        <input name="aa" size="1">x<sup>2</sup>+<input name="bb" size="1">x+<input name="cc" size="1">=0&nbsp&nbsp&nbsp
+        <input name="aa" size="1" type="number">x<sup>2</sup>+<input name="bb" size="1" type="number">x+<input name="cc" size="1" type="number">=0&nbsp&nbsp&nbsp
         <input type="submit" value="oblicz pierwiastki">
     </form>
 
