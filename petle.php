@@ -6,8 +6,8 @@
 </form>
 <?php
 if (isset($_POST['1a'])) {
-    for ($i = 1; $i <= $_POST['1a']; $i++) {
-        echo $i . " ";
+    for ($row = 1; $row <= $_POST['1a']; $row++) {
+        echo $row . " ";
     }
 }
 ?>
@@ -20,8 +20,8 @@ if (isset($_POST['1a'])) {
 </form>
 <?php
 if (isset($_POST['1b'])) {
-    for ($i = 1; $i <= $_POST['1b']; $i++) {
-        echo $i . "<br>";
+    for ($row = 1; $row <= $_POST['1b']; $row++) {
+        echo $row . "<br>";
     }
 }
 ?>
@@ -34,8 +34,8 @@ if (isset($_POST['1b'])) {
 </form>
 <?php
 if (isset($_POST['1c'])) {
-    for ($i = $_POST['1c']; $i > 0 ; $i--) {
-        echo $i . " ";
+    for ($row = $_POST['1c']; $row > 0 ; $row--) {
+        echo $row . " ";
     }
 }
 ?>
@@ -53,8 +53,8 @@ if (isset($_POST['1c'])) {
 </form>
 <?php
 if (isset($_POST['1dstart']) && isset($_POST['1dkrok']) && isset($_POST['1dkoniec'])) {
-    for ($i = $_POST['1dstart']; $i <= $_POST['1dkoniec']; $i += $_POST['1dkrok']) {
-        echo $i . " ";
+    for ($row = $_POST['1dstart']; $row <= $_POST['1dkoniec']; $row += $_POST['1dkrok']) {
+        echo $row . " ";
     }
 }
 ?>
@@ -64,8 +64,8 @@ Ile masz lat:
 <form action="petle.php" method="POST">
     <select name="2">
         <?php
-        for($i = 1; $i <= 133; $i++) {
-            echo "<option value='" . $i . "'>" . $i . "</option>";
+        for($row = 1; $row <= 133; $row++) {
+            echo "<option value='" . $row . "'>" . $row . "</option>";
         }
         ?>
     </select>
@@ -143,5 +143,53 @@ Ile masz lat:
             echo "<div style='border: 1px solid black; width: 25px; height: 25px; margin: 1px; background-color:".$_color."'></div>";
         }
         echo "</div>";
+    }
+?>
+
+<h3>6a</h3>
+    <form method="post" action="petle.php">
+        rozmiar:<input name="ile3" size="1">
+    <input type="submit">
+</form>
+<?php
+    if (isset($_POST["ile3"])) {
+        echo "<table border=1>";
+        for ($row=1; $row <= $_POST["ile3"]; $row++) { 
+            echo "<tr>";
+            for ($col=1; $col <= $_POST["ile3"]; $col++) {
+                echo "<td>" . ($row * $col) . "</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+    }
+?>
+
+<h3>6b</h3>
+    <form method="post" action="petle.php">
+        rozmiar:<input name="ile4" size="1">
+    <input type="submit" value="ok">
+</form>
+<?php
+    if (isset($_POST["ile4"])) {
+        echo "<table border='0' cellpadding='4'>";
+    
+        echo "<tr><td></td>";
+        for ($row = 1; $row <= $_POST["ile4"]; $row++) {
+            echo "<td bgcolor='grey'>$row</td>";
+        }
+        echo "</tr>";
+        
+        for ($row = 1; $row <= $_POST["ile4"]; $row++) {
+            echo "<tr>";
+            echo "<td bgcolor='grey'>$row</td>";
+            for ($col = 1; $col <= $_POST["ile4"]; $col++) {
+                $value = $row * $col;
+                echo "<td>$value</td>";
+            }
+            echo "</tr>";
+        }
+        
+        echo "</table>";
     }
 ?>
